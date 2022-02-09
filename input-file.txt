@@ -1,0 +1,4 @@
+Worker 12.50
+Manager 13.75
+Salesman 11.50
+CEO 100.00

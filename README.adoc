@@ -1,0 +1,69 @@
+= CS 202 The Assignment Formerly Known as Lab 3
+:icons: font
+
+
+== Overview
+
+This was _originally_ going to be lab 3, but since I stupidly posted this solution ...
+
+[NOTE]
+--
+Below are the instructions for your reference, but unless you just want to, you don't need to do anything with them. Do review the code as it should help you understand file operations.
+--
+
+== Steps
+
+.Step 1
+Create a makefile to generate an executable named `lab3`. The only file for this project will be `main.cpp`.
+
+.Step 2
+
+In `main.cpp`, create a method called `copyFile`
+
+* The method should have two parameters: `std::string inputFile`, and `std::string outputFile`
+* In the method
+** Create an `ifstream` object that opens the file with the name passed in the `inputFile` parameter
+** Create an `ofstream` object that opens a file for output with the name passed in the `outputFile` parameter
+** In a loop, read the input file  _one line at a time_  and write that line to the output file. Your code must read as many lines as there are in the input file: you cannot hardcode a value based on knowing in advance how many lines are present.
+_You will need to search the interwebs (or your book!) for a function that will read one line at a time_
+** Be sure to call the `close` method on the output file stream.
+_Do NOT call the `close` method on the input stream yet_.
+
+.Step 3
+If you have not done so already, call the function in the `main` method. Compile and run your application and check that the output file that was created is correct. It should be identical to the input file.
+
+.Step 4
+Place this code in the `main` function immediately following the call to `copyFile`
+
+[source, c++]
+----
+mystream.clear();
+mystream.seekg(0);
+----
+
+where "mystream" is the name that you used for your input stream.
+
+.Step 5
+Use your input stream to read the file again, this time reading one word at a time. Write each word to the console as you read the file. After all the words in the file have been printed, be sure to close the input file.
+Your console output should be
+
+----
+Worker
+12.50
+Manager
+13.75
+Salesman
+11.50
+CEO
+100.00
+----
+
+.Step 6
+Research the functions above that you added in Step 4 above. What does each function do? Put your answer at the bottom of this readme file and be sure to commit the changes to git. Your explanations must be in your own words - not just copied from stackoverflow or some other reference site!
+
+.Step 7
+
+* Add and commit new files and changes to git.
+* Push your code to Github using `git push origin master`
+* Go to your Github account and verify that your code has correctly been pushed.
+* Copy the URL for your repository, and submit that along with your Github username to WebCampus.
